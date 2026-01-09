@@ -1,6 +1,5 @@
-package model;
+package com.zoro.patientmanagement.model;
 
-import java.lang.annotation.Inherited;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -16,21 +15,21 @@ import jakarta.validation.constraints.Email;
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id; 
- 
+    private UUID id;
+
     @NotNull
     private String name;
 
     @Email
     @NotNull
-    @Column(unique=true)
+    @Column(unique = true)
     private String email;
 
-    @NotNull  
+    @NotNull
     private String address;
 
     @NotNull
-    private LocalDate dob;
+    private LocalDate date_of_birth;
 
     // Getters and Setters
     public UUID getId() {
@@ -65,11 +64,11 @@ public class Patient {
         this.address = address;
     }
 
-    public LocalDate getDob() {
-        return dob;
+    public LocalDate getDate_of_birth() {
+        return date_of_birth;
     }
 
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
+    public void setDate_of_birth(LocalDate dob) {
+        this.date_of_birth = dob;
     }
 }
